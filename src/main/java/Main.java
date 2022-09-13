@@ -6,7 +6,6 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         Database database = new Database();
-        database.setAntalSuperheros( );
         int menuValg;
 
         //Udprinter velkomst
@@ -17,6 +16,7 @@ public class Main {
 
         do {
             System.out.println("1. Lav en ny superhero");
+            System.out.println("2. Liste af superheroes");
             System.out.println("9. Afslut");
             menuValg = scanner.nextInt();
             scanner.nextLine();
@@ -40,9 +40,12 @@ public class Main {
 
             } else if (menuValg == 9) {
                 System.out.println("Programmet afsluttes");
+            }else if (menuValg == 2) {
+                database.showListOfSuperheroes();
+
             }
 
-        } while (menuValg == 1);
+        } while (menuValg == 1 || menuValg == 2);
 
 
 
