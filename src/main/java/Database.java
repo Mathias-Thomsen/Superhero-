@@ -18,20 +18,7 @@ public class Database {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public void setAntalSuperheros() {
+        this.antalSuperheros = antalSuperheros;
+    }
 }
