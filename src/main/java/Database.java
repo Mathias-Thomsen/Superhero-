@@ -29,7 +29,10 @@ public class Database {
             name = superhero.getSuperHeroName().toLowerCase();
             if (name.contains(searchTerm.toLowerCase())) {
                 System.out.println(superhero.getSuperHeroName());
-            } else System.out.println("Superhelten findes ikke");
+            } else {
+                System.out.println("Superhelten findes ikke");
+                break;
+            }
 
         }return null;
 
