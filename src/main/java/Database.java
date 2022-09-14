@@ -2,6 +2,14 @@ import java.util.ArrayList;
 
 public class Database {
     private ArrayList<Superhero> superheroes = new ArrayList<>();
+    private String name;
+
+
+    public void createTestData() {
+        createSuperHero("Batman", "Bruce Wayne", false, "Money", 1939, 1.00);
+        createSuperHero("Batman", "Bruce Wayne", false, "Money", 1939, 1.00);
+        createSuperHero("Batman", "Bruce Wayne", false, "Money", 1939, 1.00);
+    }
 
 
 
@@ -11,16 +19,31 @@ public class Database {
 
     }
 
-    public void showListOfSuperheroes(){
-        for (Superhero superhero : superheroes) {
-            System.out.println("------------------\n"
-                    + "Superheltenavn: " + superhero.getSuperHeroName()+ "\n"
-                    + "Superkraft: " + superhero.getSuperPower()+ "\n"
-                    + "Virkelige navn: " + superhero.getReelName()+ "\n"
-                    + "Oprindelsesår: " + superhero.getCreationYear()+ "\n"
-                    + "Er menneske: " + superhero.getHuman()+ "\n"
-                    + "Styrke: " + superhero.getPowerLevel());
-        }
+    public ArrayList<Superhero> getSuperheroes() {
+        return superheroes;
     }
 
-}
+    public Superhero searchFor(String searchTerm) {
+
+        for (Superhero superhero : superheroes) {
+            name = superhero.getSuperHeroName().toLowerCase();
+            if (name.contains(searchTerm.toLowerCase())) {
+                System.out.println(superhero.getSuperHeroName());
+            } else System.out.println("Superhelten findes ikke");
+
+        }return null;
+
+
+
+    }
+
+    }
+
+
+
+
+
+
+
+
+

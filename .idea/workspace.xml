@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a176157-4a6c-421c-b08b-da46210d6f52" name="Changes" comment="commit test">
+    <list default="true" id="0a176157-4a6c-421c-b08b-da46210d6f52" name="Changes" comment="commit af IntelliJ filer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Superhero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Superhero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +66,7 @@
       <workItem from="1662988435231" duration="9380000" />
       <workItem from="1663006487059" duration="1594000" />
       <workItem from="1663050356293" duration="12879000" />
-      <workItem from="1663078004455" duration="3088000" />
+      <workItem from="1663078004455" duration="15288000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet scanner input">
       <created>1662990462018</created>
@@ -121,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663136319313</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="commit af IntelliJ filer">
+      <created>1663140476176</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1663140476176</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,17 +168,7 @@
     <MESSAGE value="while loop i Main og if statements" />
     <MESSAGE value="userstory 4, kan vise liste af superhelte." />
     <MESSAGE value="commit test" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit test" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Database.java</url>
-          <line>2</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="commit af IntelliJ filer" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit af IntelliJ filer" />
   </component>
 </project>
