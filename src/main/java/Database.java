@@ -4,6 +4,7 @@ public class Database {
     private ArrayList<Superhero> superheroes = new ArrayList<>();
     private String name;
 
+
     public void createTestData() {
         createSuperHero("Batman", "Bruce Wayne", false, "Money", 1939, 1.00);
         createSuperHero("Spiderman", "Peter Parker", true, "Spindelvæv", 2000, 1.00);
@@ -22,21 +23,15 @@ public class Database {
         for (Superhero superhero : superheroes) {
             name = superhero.getSuperHeroName().toLowerCase();
             if (name.contains(searchTerm.toLowerCase())) {
-                System.out.println(superhero.getSuperHeroName());
-
-            } else {
-                System.out.println("Superhelten findes ikke");
-                break;
+                return superhero;
             }
 
+        }
 
-        }return null;
-
-
-
-    }
+        return null;
 
     }
+}
 
 
 

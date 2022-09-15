@@ -7,7 +7,9 @@ public class Userinterface {
 
 
     public void menu() {
-        System.out.println("Velkommen til superhelte universet!!!");
+        System.out.println("-------------------------");
+        System.out.println("Database med superheroes!");
+        System.out.println("-------------------------");
         System.out.println("1. Lav en ny superhero");
         System.out.println("2. Liste af superheroes");
         System.out.println("3. Søgning efter superheroes");
@@ -17,25 +19,33 @@ public class Userinterface {
 
     }
     public void creatSuperhero(){
+        System.out.println("-----------------------------------------------------");
         System.out.print("Indtast navnet på din superhelt (fx Spiderman): ");
         String superHeroName = scanner.nextLine();
+        System.out.println("-----------------------------------------------------");
         System.out.print("Indtast superheltens rigtige navn (fx Peter Parker): ");
         String reelName = scanner.nextLine();
+        System.out.println("-----------------------------------------------------");
         System.out.print("Er din superhelt et menneske (j/n): ");
+
         char userAnswerHuman = scanner.next().charAt(0);
         boolean isHuman = false;
         if (userAnswerHuman == 'j') {
             isHuman = true;
         } else if (userAnswerHuman == 'n') {
             isHuman = false;
-        } else System.out.println("Ugyldigt svar");
-        scanner.nextLine();
 
+        } else
+            System.out.println("Ugyldigt svar");
+        scanner.nextLine();
+        System.out.println("-----------------------------------------------------");
         System.out.print("Indtast superheltens superpower (fx stærk): ");
         String superPower = scanner.nextLine();
+        System.out.println("-----------------------------------------------------");
         System.out.print("Indtast det år superhelten blev skabt (fx 1945): ");
         int creationYear = scanner.nextInt();
         scanner.nextLine();
+        System.out.println("-----------------------------------------------------");
         System.out.print("Indtast superheltens styrke (med ',' f.eks. 1,5): ");
         double styrke = scanner.nextDouble();
         database.createSuperHero(superHeroName, reelName, isHuman, superPower, creationYear, styrke);
@@ -56,6 +66,28 @@ public class Userinterface {
         startprogram();
     }
 
+    public void searchInList() {
+        System.out.println("-----------------------------------------------------");
+        System.out.println("Indtast den superhelt du vil søge efter: ");
+        String searchTerm = scanner.nextLine();
+        Superhero superherolist = database.searchFor(searchTerm);
+        if (superherolist == null) {
+            System.out.println("Superhelten findes ikke i databasen");
+        }
+        else {
+            System.out.println("------------------\n"
+                    + "Superheltenavn: " + superherolist.getSuperHeroName() + "\n"
+                    + "Superkraft: " + superherolist.getSuperPower() + "\n"
+                    + "Virkelige navn: " + superherolist.getReelName() + "\n"
+                    + "Oprindelsesår: " + superherolist.getCreationYear() + "\n"
+                    + "Er menneske: " + superherolist.getHuman() + "\n"
+                    + "Styrke: " + superherolist.getPowerLevel());
+
+        }
+
+        startprogram();
+    }
+
     public void startprogram() {
         //test data husk at slette.
         database.createTestData();
@@ -68,12 +100,7 @@ public class Userinterface {
             showListOfSuperheroes();
         }
         else if (menuValg == 3) {
-            System.out.println("Indtast den superhelt du vil søge efter: ");
-            String searchTerm = scanner.nextLine();
-            database.searchFor(searchTerm);
-
-            startprogram();
-
+            searchInList();
         }
         else if (menuValg == 9) {
             System.out.println("Programmet afsluttes");
