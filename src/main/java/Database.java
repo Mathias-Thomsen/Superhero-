@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Database {
-    private ArrayList<Superhero> superheroes = new ArrayList<>();
-    private String name;
+    public ArrayList<Superhero> superheroes = new ArrayList<>();
+
 
 
     public void createTestData() {
@@ -18,19 +18,7 @@ public class Database {
     public ArrayList<Superhero> getSuperheroes() {
         return superheroes;
     }
-    public Superhero searchFor(String searchTerm) {
 
-        for (Superhero superhero : superheroes) {
-            name = superhero.getSuperHeroName().toLowerCase();
-            if (name.contains(searchTerm.toLowerCase())) {
-                return superhero;
-            }
-
-        }
-
-        return null;
-
-    }
 }
 
 

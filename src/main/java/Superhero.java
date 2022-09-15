@@ -36,6 +36,10 @@ public class Superhero {
         return powerLevel;
     }
 
+    public String toString() {
+        return getSuperHeroName() + ", " + getSuperPower() + ", " + getReelName() + ", " + getCreationYear() + ", " + getHuman() + ", " + getPowerLevel();
+    }
+
 
 
 
