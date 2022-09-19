@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a176157-4a6c-421c-b08b-da46210d6f52" name="Changes" comment="rettet superhelte søge metoden så den virker">
+    <list default="true" id="0a176157-4a6c-421c-b08b-da46210d6f52" name="Changes" comment="sat tal foran resultaterne når man søger superhelt frem.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Superhero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Superhero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Userinterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Userinterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +67,8 @@
       <workItem from="1663050356293" duration="12879000" />
       <workItem from="1663078004455" duration="17407000" />
       <workItem from="1663219383516" duration="14836000" />
-      <workItem from="1663262898237" duration="4636000" />
+      <workItem from="1663262898237" duration="4839000" />
+      <workItem from="1663324732276" duration="22610000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet scanner input">
       <created>1662990462018</created>
@@ -175,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663246241732</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="sat tal foran resultaterne når man søger superhelt frem.">
+      <created>1663267733726</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1663267733727</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +226,7 @@
     <MESSAGE value="Tilføjet menu metoden og rettet if statements til" />
     <MESSAGE value="tilføjet else statement i metoden startprogram" />
     <MESSAGE value="rettet superhelte søge metoden så den virker" />
-    <option name="LAST_COMMIT_MESSAGE" value="rettet superhelte søge metoden så den virker" />
+    <MESSAGE value="sat tal foran resultaterne når man søger superhelt frem." />
+    <option name="LAST_COMMIT_MESSAGE" value="sat tal foran resultaterne når man søger superhelt frem." />
   </component>
 </project>
