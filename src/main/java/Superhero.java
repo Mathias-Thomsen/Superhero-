@@ -40,13 +40,37 @@ public class Superhero {
         return getSuperHeroName() + ", " + getSuperPower() + ", " + getReelName() + ", " + getCreationYear() + ", " + getHuman() + ", " + getPowerLevel();
     }
 
+    public void setSuperheroName(String newSuperheroName) {
+        this.superHeroName = newSuperheroName;
+    }
 
+    public void setReelName(String newReelName) {
+        this.reelName = newReelName;
+    }
 
+    public void setSuperPower(String newSuperPower) {
+        this.superPower = newSuperPower;
+    }
 
+    public void setCreationYear(int newCreationYear) {
+        this.creationYear = newCreationYear;
+    }
 
+    public void setIsHuman(boolean newIsHuman) {
+        this.isHuman = newIsHuman;
+    }
 
-
-
-
-
+    public void setPowerLevel(double newPowerLevel) {
+        this.powerLevel = newPowerLevel;
+    }
 }
+
+
+
+
+
+
+
+
+
+
