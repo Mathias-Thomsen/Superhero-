@@ -19,6 +19,15 @@ public class Database {
         return superheroes;
     }
 
+    public ArrayList<Superhero> findSuperhero(String searchTerm){
+        ArrayList<Superhero> searchResult = new ArrayList<Superhero>();
+        for (Superhero hero : superheroes) {
+            if (hero.getSuperHeroName().contains(searchTerm)) {
+                searchResult.add(hero);
+            }
+        }return searchResult;
+    }
+
 }
 
 

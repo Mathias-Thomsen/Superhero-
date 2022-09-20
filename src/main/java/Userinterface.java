@@ -1,3 +1,4 @@
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -5,7 +6,7 @@ public class Userinterface {
     Scanner scanner = new Scanner(System.in);
     Database database = new Database();
     private String name;
-    boolean userValgFalse;
+    boolean userValgFalse = false;
 
 
     public void menu() {
@@ -106,30 +107,26 @@ public class Userinterface {
         System.out.println("Indtast den superhelt du vil søge efter: ");
         String searchTerm = scanner.nextLine();
 
-        ArrayList<Superhero> searchResult = new ArrayList<Superhero>();
+        for (Superhero superhero : database.findSuperhero(searchTerm) ) {
+            System.out.println("------------------\n"
+                + "Superheltenavn: " + superhero.getSuperHeroName() + "\n"
+                + "Superkraft: " + superhero.getSuperPower() + "\n"
+                + "Virkelige navn: " + superhero.getReelName() + "\n"
+                + "Oprindelsesår: " + superhero.getCreationYear() + "\n"
+                + "Er menneske: " + superhero.getHuman() + "\n"
+                + "Styrke: " + superhero.getPowerLevel());
 
-        for (Superhero superhero : database.superheroes) {
-            name = superhero.getSuperHeroName().toLowerCase();
-            if (name.contains(searchTerm.toLowerCase())) {
-                searchResult.add(superhero);
-                System.out.println("------------------\n"
-                        + "Superheltenavn: " + superhero.getSuperHeroName() + "\n"
-                        + "Superkraft: " + superhero.getSuperPower() + "\n"
-                        + "Virkelige navn: " + superhero.getReelName() + "\n"
-                        + "Oprindelsesår: " + superhero.getCreationYear() + "\n"
-                        + "Er menneske: " + superhero.getHuman() + "\n"
-                        + "Styrke: " + superhero.getPowerLevel());
-
-            }
         }
-
     }
+
+
 
     public void editSuperhero() {
         System.out.println("-----------------------------------------------------");
         System.out.println("Indtast en superhero du vil redigere: ");
-        String userEditSuperhero = this.scanner.nextLine();
+        String userEditSuperhero = scanner.nextLine();
         ArrayList<Superhero> searchEditResult = new ArrayList();
+
         int index = 1;
 
 
@@ -137,16 +134,15 @@ public class Userinterface {
             name = editSuperhero.getSuperHeroName().toLowerCase();
             if (name.contains(userEditSuperhero.toLowerCase())) {
                 searchEditResult.add(editSuperhero);
-                System.out.println("------------------\n"
-                        + "Superheltenavn: " + editSuperhero.getSuperHeroName() + "\n"
-                        + "Superkraft: " + editSuperhero.getSuperPower() + "\n"
-                        + "Virkelige navn: " + editSuperhero.getReelName() + "\n"
-                        + "Oprindelsesår: " + editSuperhero.getCreationYear() + "\n"
-                        + "Er menneske: " + editSuperhero.getHuman() + "\n"
-                        + "Styrke: " + editSuperhero.getPowerLevel());
+                System.out.println(index++ + ":" + editSuperhero.getSuperHeroName());
 
             }
         }
+
+        System.out.print("Indtast nummeret på den superhero du vil redigere: ");
+        String userEditNumberString = scanner.nextLine();
+        int userEditNumberInteger = Integer.parseInt(userEditNumberString);
+
 
         Superhero editSuperhero = searchEditResult.get(index - 1);
         System.out.println("Redigere: " + editSuperhero);
