@@ -9,16 +9,15 @@ class DatabaseTest {
 
     @BeforeEach
     public void setup() {
-        Database database = new Database();
+        database = new Database();
+        database.createTestData();
     }
-
-
 
 
     @Test
     public void testCreateSuperhero() {
         //Arrange
-
+        Database database = new Database();
         //Act
         database.createSuperHero("Superman", "Clark", false, "rig", 2001, 2);
 
@@ -40,7 +39,7 @@ class DatabaseTest {
 
         //Act
 
-        int expected = 4;
+        int expected = 7;
         int actual = database.getSuperheroes().size();
 
         //Assert
@@ -48,19 +47,15 @@ class DatabaseTest {
     }
 
     @Test
-
     public void CreateTestDataTest() {
         //Arrange
-
         //Act
         database.createTestData();
-
         //Assert
 
     }
 
     @Test
-
     public void findSuperheroOneResult() {
         //Arrange
         Database database = new Database();
@@ -88,14 +83,34 @@ class DatabaseTest {
         database.createTestData();
 
         ArrayList<Superhero> result = database.findSuperhero("Batman");
-
         int actualSize = result.size();
-
         int expectedSize = 1;
 
         //Assert
         assertEquals(actualSize, expectedSize);
 
 
+    }
+
+    @Test
+    public void deleteSuperhero() {
+        ArrayList<Superhero> result = database.getSuperheroes();
+        Superhero superhero = result.get(0);
+
+
+        boolean expectedResult = true;
+        int expectedSize = result.size() - 1;
+
+        boolean actualResult = database.deleteSuperhero(superhero);
+        assertEquals(expectedResult, actualResult);
+
+
+        ArrayList<Superhero> resultAfterDelete = database.getSuperheroes();
+        int actualSize = resultAfterDelete.size();
+
+        assertEquals(expectedSize, actualSize);
+    }
+
 
 }
+

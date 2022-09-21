@@ -21,6 +21,7 @@ public class Userinterface {
             System.out.println("2. Liste af superheroes");
             System.out.println("3. Søgning efter superheroes");
             System.out.println("4. Redigere superhero");
+            System.out.println("5. Slet superhero");
             System.out.println("9. Afslut");
 
             do {
@@ -38,22 +39,22 @@ public class Userinterface {
         }
 
     }
-
     public void startprogram(int menuValg) {
         if (menuValg == 1) {
             createSuperhero();
         } else if (menuValg == 2) {
-            this.showListOfSuperheroes();
+            showListOfSuperheroes();
         } else if (menuValg == 3) {
-            this.searchSuperhero();
+            searchSuperhero();
         } else if (menuValg == 4) {
-            this.editSuperhero();
+            editSuperhero();
+        } else if (menuValg == 5) {
+            deleteSuperheroUserInput();
         } else if (menuValg == 9) {
             System.out.println("Programmet afsluttes");
         }
 
     }
-
     public void createSuperhero() {
         System.out.println("-----------------------------------------------------");
         System.out.print("Indtast navnet på din superhelt (fx Spiderman): ");
@@ -87,7 +88,6 @@ public class Userinterface {
         this.scanner.nextLine();
         this.database.createSuperHero(superHeroName, reelName, isHuman, superPower, creationYear, styrke);
     }
-
     public void showListOfSuperheroes() {
         System.out.println("Liste af superhelte: ");
         for (Superhero superhero : database.getSuperheroes()) {
@@ -101,7 +101,6 @@ public class Userinterface {
         }
 
     }
-
     public void searchSuperhero() {
         System.out.println("-----------------------------------------------------");
         System.out.println("Indtast den superhelt du vil søge efter: ");
@@ -118,9 +117,6 @@ public class Userinterface {
 
         }
     }
-
-
-
     public void editSuperhero() {
         System.out.println("-----------------------------------------------------");
         System.out.println("Indtast en superhero du vil redigere: ");
@@ -145,7 +141,8 @@ public class Userinterface {
 
 
         Superhero editSuperhero = searchEditResult.get(userEditNumberInteger - 1);
-        System.out.println("Redigere: " + editSuperhero);
+        System.out.println("Du har valgt at redigere: " + editSuperhero.getSuperHeroName());
+
         System.out.println("Ønsker du ikke redigere tryk ENTER for at fortsætte!");
 
 
@@ -244,6 +241,33 @@ public class Userinterface {
                 System.out.println("Skriv venligst din rettelse med kommatal (f.eks. 1,5) eller ENTER hvis du ikke vil rette!");
             }
         } while (userValgFalse == false);
+
+    }
+
+    public void deleteSuperheroUserInput(){
+        System.out.println("-----------------------------------------------------");
+        System.out.println("Indtast en superhero du vil slette: ");
+        String userDeleteSuperhero = scanner.nextLine();
+        ArrayList<Superhero> searchDeleteResult = new ArrayList();
+
+        int index = 1;
+
+
+        for (Superhero deleteSuperhero : database.superheroes) {
+            name = deleteSuperhero.getSuperHeroName().toLowerCase();
+            if (name.contains(userDeleteSuperhero.toLowerCase())) {
+                searchDeleteResult.add(deleteSuperhero);
+                System.out.println(index++ + ":" + deleteSuperhero.getSuperHeroName());
+
+            }
+        }
+        System.out.print("Indtast nummeret på den superhero du vil slette: ");
+        String userDeleteNumberString = scanner.nextLine();
+        int userDeleteNumberInt = Integer.parseInt(userDeleteNumberString);
+
+        Superhero deleteSuperhero = searchDeleteResult.get(userDeleteNumberInt - 1);
+        database.deleteSuperhero(deleteSuperhero);
+        System.out.println("Du har nu slettet: " + deleteSuperhero.getSuperHeroName());
 
     }
 }

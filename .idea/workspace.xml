@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a176157-4a6c-421c-b08b-da46210d6f52" name="Changes" comment="testdatabase virker">
+    <list default="true" id="0a176157-4a6c-421c-b08b-da46210d6f52" name="Changes" comment="editSuperhero metode fixet og virker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Userinterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Userinterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" afterDir="false" />
     </list>
@@ -66,7 +67,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Superhero app">
+  <component name="RunManager" selected="JUnit.DatabaseTest">
     <configuration name="Superhero app" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="SuperheroProject" />
@@ -83,6 +84,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DatabaseTest.deleteSuperhero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SuperheroProject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DatabaseTest" />
+      <option name="METHOD_NAME" value="deleteSuperhero" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DatabaseTest.testCreateSuperhero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SuperheroProject" />
       <option name="PACKAGE_NAME" value="" />
@@ -95,13 +106,15 @@
     </configuration>
     <list>
       <item itemvalue="Application.Superhero app" />
+      <item itemvalue="JUnit.DatabaseTest.deleteSuperhero" />
       <item itemvalue="JUnit.DatabaseTest" />
       <item itemvalue="JUnit.DatabaseTest.testCreateSuperhero" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DatabaseTest.testCreateSuperhero" />
         <item itemvalue="JUnit.DatabaseTest" />
+        <item itemvalue="JUnit.DatabaseTest.deleteSuperhero" />
+        <item itemvalue="JUnit.DatabaseTest.testCreateSuperhero" />
       </list>
     </recent_temporary>
   </component>
@@ -253,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663743254979</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="editSuperhero metode fixet og virker">
+      <created>1663747816587</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1663747816587</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,6 +326,7 @@
     <MESSAGE value="flyttet findSuperhero ind i database klasen" />
     <MESSAGE value="testdatabase" />
     <MESSAGE value="testdatabase virker" />
-    <option name="LAST_COMMIT_MESSAGE" value="testdatabase virker" />
+    <MESSAGE value="editSuperhero metode fixet og virker" />
+    <option name="LAST_COMMIT_MESSAGE" value="editSuperhero metode fixet og virker" />
   </component>
 </project>
