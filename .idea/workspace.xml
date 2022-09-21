@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a176157-4a6c-421c-b08b-da46210d6f52" name="Changes" comment="testdatabase">
+    <list default="true" id="0a176157-4a6c-421c-b08b-da46210d6f52" name="Changes" comment="testdatabase virker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Userinterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Userinterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +66,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Superhero app">
+    <configuration name="Superhero app" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="SuperheroProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DatabaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SuperheroProject" />
       <option name="PACKAGE_NAME" value="" />
@@ -76,8 +83,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DatabaseTest.testCreateSuperhero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SuperheroProject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DatabaseTest" />
+      <option name="METHOD_NAME" value="testCreateSuperhero" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Superhero app" />
+      <item itemvalue="JUnit.DatabaseTest" />
+      <item itemvalue="JUnit.DatabaseTest.testCreateSuperhero" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DatabaseTest.testCreateSuperhero" />
         <item itemvalue="JUnit.DatabaseTest" />
       </list>
     </recent_temporary>
@@ -223,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663703348171</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="testdatabase virker">
+      <created>1663743254979</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1663743254979</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +305,7 @@
     <MESSAGE value="Tilføjet try catch på nogen metoder" />
     <MESSAGE value="flyttet findSuperhero ind i database klasen" />
     <MESSAGE value="testdatabase" />
-    <option name="LAST_COMMIT_MESSAGE" value="testdatabase" />
+    <MESSAGE value="testdatabase virker" />
+    <option name="LAST_COMMIT_MESSAGE" value="testdatabase virker" />
   </component>
 </project>

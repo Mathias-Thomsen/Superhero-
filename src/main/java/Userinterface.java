@@ -41,7 +41,7 @@ public class Userinterface {
 
     public void startprogram(int menuValg) {
         if (menuValg == 1) {
-            this.createSuperhero();
+            createSuperhero();
         } else if (menuValg == 2) {
             this.showListOfSuperheroes();
         } else if (menuValg == 3) {
@@ -57,7 +57,7 @@ public class Userinterface {
     public void createSuperhero() {
         System.out.println("-----------------------------------------------------");
         System.out.print("Indtast navnet på din superhelt (fx Spiderman): ");
-        String superHeroName = this.scanner.nextLine();
+        String superHeroName = this.scanner.nextLine(); //TODO lave while hvis bruger indtaster forkert...
         System.out.println("-----------------------------------------------------");
         System.out.print("Indtast superheltens rigtige navn (fx Peter Parker): ");
         String reelName = this.scanner.nextLine();
@@ -144,24 +144,9 @@ public class Userinterface {
         int userEditNumberInteger = Integer.parseInt(userEditNumberString);
 
 
-        Superhero editSuperhero = searchEditResult.get(index - 1);
+        Superhero editSuperhero = searchEditResult.get(userEditNumberInteger - 1);
         System.out.println("Redigere: " + editSuperhero);
         System.out.println("Ønsker du ikke redigere tryk ENTER for at fortsætte!");
-
-
-        do {
-            System.out.print("Indtast tallet på den superhero du vil redigere:");
-
-            try {
-                int intSuperheroEdit;
-                String newPowerLevel = this.scanner.nextLine();
-                intSuperheroEdit = Integer.parseInt(newPowerLevel);
-                userValgFalse = true;
-            } catch (NumberFormatException var12) {
-                System.out.print("Indtast venligst et gyldigt nummer! ");
-            }
-        } while (userValgFalse == false);
-
 
 
         do {
@@ -169,7 +154,7 @@ public class Userinterface {
 
             try {
                 System.out.print("Skriv din rettelse her: ");
-                String newSuperheroName = scanner.nextLine();
+                String newSuperheroName = scanner.nextLine().trim();
                 if (!newSuperheroName.isEmpty()) {
                     editSuperhero.setSuperheroName(newSuperheroName);
                 }
@@ -185,7 +170,7 @@ public class Userinterface {
 
             try {
                 System.out.print("Skriv din rettelse her: ");
-                String newReelName = scanner.nextLine();
+                String newReelName = scanner.nextLine().trim();
                 if (!newReelName.isEmpty()) {
                     editSuperhero.setReelName(newReelName);
                 }
@@ -201,7 +186,7 @@ public class Userinterface {
 
             try {
                 System.out.print("Skriv din rettelse her: ");
-                String newSuperPower = scanner.nextLine();
+                String newSuperPower = scanner.nextLine().trim();//trim cutter mellemrum fra brugerinputet.
                 if (!newSuperPower.isEmpty()) {
                     editSuperhero.setSuperPower(newSuperPower);
                 }
@@ -217,7 +202,7 @@ public class Userinterface {
 
             try {
                 System.out.print("Skriv din rettelse her: ");
-                String newCreationYear = scanner.nextLine();
+                String newCreationYear = scanner.nextLine().trim();
                 if (!newCreationYear.isEmpty()) {
                     editSuperhero.setCreationYear(Integer.parseInt(newCreationYear));
                 }
@@ -233,7 +218,7 @@ public class Userinterface {
 
             try {
                 System.out.print("Skriv din rettelse her (j/n): ");
-                String newIsHuman = scanner.nextLine();
+                String newIsHuman = scanner.nextLine().trim();
                 if (!newIsHuman.isEmpty()) {
                     editSuperhero.setIsHuman(Boolean.parseBoolean(newIsHuman));
                 }
@@ -249,7 +234,7 @@ public class Userinterface {
 
             try {
                 System.out.print("Skriv din rettelse her: ");
-                String newPowerLevel = scanner.nextLine();
+                String newPowerLevel = scanner.nextLine().trim();
                 if (!newPowerLevel.isEmpty()) {
                     editSuperhero.setPowerLevel(Double.parseDouble(newPowerLevel));
                 }
