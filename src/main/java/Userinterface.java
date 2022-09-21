@@ -25,17 +25,17 @@ public class Userinterface {
             System.out.println("9. Afslut");
 
             do {
-                String valg = scanner.nextLine();
-
+                String valg = scanner.nextLine().trim();
                 try {
                     menuValg = Integer.parseInt(valg);
                     userValgFalse = true;
-                    startprogram(menuValg);
                 } catch (NumberFormatException e) {
                     System.out.print("Der skete en fejl! - Indtast venligst et gyldigt nummer: ");
                 }
 
             } while (userValgFalse == false);
+
+            startprogram(menuValg);
         }
 
     }
@@ -57,36 +57,81 @@ public class Userinterface {
     }
     public void createSuperhero() {
         System.out.println("-----------------------------------------------------");
-        System.out.print("Indtast navnet på din superhelt (fx Spiderman): ");
-        String superHeroName = this.scanner.nextLine(); //TODO lave while hvis bruger indtaster forkert...
+        System.out.print("Indtast navnet på din superhelt (fx Spiderman): "); //TODO række følgen af superhelte data udprint skal laves om.
+        String superHeroName = scanner.nextLine(); //TODO lave while hvis bruger indtaster forkert...
+
+        while (superHeroName.isEmpty() || superHeroName == "") {
+            System.out.print("Indtast venligst et navn:");
+            superHeroName = scanner.nextLine();
+        }
         System.out.println("-----------------------------------------------------");
         System.out.print("Indtast superheltens rigtige navn (fx Peter Parker): ");
-        String reelName = this.scanner.nextLine();
+        String reelName = scanner.nextLine();
+
+        while (reelName.isEmpty() || reelName == "") {
+            System.out.print("Indtast venligst et navn:");
+            reelName = scanner.nextLine();
+        }
         System.out.println("-----------------------------------------------------");
         System.out.print("Er din superhelt et menneske (j/n): ");
-        char userAnswerHuman = this.scanner.next().charAt(0);
-        boolean isHuman = false;
-        if (userAnswerHuman == 'j') {
-            isHuman = true;
-        } else if (userAnswerHuman == 'n') {
-            isHuman = false;
-        } else {
-            System.out.println("Ugyldigt svar");
-        }
 
-        this.scanner.nextLine();
+        boolean isHuman = false;
+        while (userValgFalse == true) {
+            String userAnswerHuman = scanner.next().toLowerCase();
+            if (userAnswerHuman.equals("j")) {
+                isHuman = true;
+                userValgFalse = false;
+            }
+            else if (userAnswerHuman.equals("n")) {
+                isHuman = false;
+                userValgFalse = false;
+
+            } else {
+                System.out.println("Skriv venligst 'j' eller 'n'");
+            }
+        }
+        scanner.nextLine();
+
         System.out.println("-----------------------------------------------------");
         System.out.print("Indtast hvilken superkraft din superhero har (fx stærk): ");
-        String superPower = this.scanner.nextLine();
+        String superPower = scanner.nextLine();
+        while (superPower.isEmpty() || superPower == "") {
+            System.out.print("Indtast venligst en superkraft:");
+            superPower = scanner.nextLine();
+        }
+
         System.out.println("-----------------------------------------------------");
         System.out.print("Indtast det år superhelten blev skabt (fx 1945): ");
-        int creationYear = this.scanner.nextInt();
-        this.scanner.nextLine();
+        int creationYear = 0;
+        do {
+            try {
+                String creationYearString = scanner.nextLine();
+                creationYear = Integer.parseInt(creationYearString);
+                userValgFalse = true;
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Indtast venligst et årstal der indeholder tal: ");
+            }
+
+        } while (userValgFalse == false );
+
         System.out.println("-----------------------------------------------------");
-        System.out.print("Indtast superheltens styrke (med ',' f.eks. 1,5): ");
-        double styrke = this.scanner.nextDouble();
-        this.scanner.nextLine();
-        this.database.createSuperHero(superHeroName, reelName, isHuman, superPower, creationYear, styrke);
+        System.out.print("Indtast superheltens styrke (med '.' f.eks. 1.5): ");
+        double styrke = 0;
+        do {
+            try {
+                String styrkeString = scanner.nextLine();
+                styrke = Double.parseDouble(styrkeString);
+                userValgFalse = true;
+
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Indtast venligst et kommatal der indeholder komma '.' f.eks. 1.5");
+                userValgFalse = false;
+            }
+        } while (userValgFalse == false);
+
+        database.createSuperHero(superHeroName, reelName, isHuman, superPower, creationYear, styrke);
     }
     public void showListOfSuperheroes() {
         System.out.println("Liste af superhelte: ");
