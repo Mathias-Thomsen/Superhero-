@@ -26,6 +26,7 @@ public class Database {
                 searchResult.add(hero);
             }
         }return searchResult;
+
     }
 
     public boolean deleteSuperhero(Superhero superhero) {

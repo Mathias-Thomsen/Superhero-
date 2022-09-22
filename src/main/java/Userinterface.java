@@ -1,4 +1,3 @@
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -33,7 +32,7 @@ public class Userinterface {
                     System.out.print("Der skete en fejl! - Indtast venligst et gyldigt nummer: ");
                 }
 
-            } while (userValgFalse == false);
+            } while (!userValgFalse);
 
             startprogram(menuValg);
         }
@@ -57,8 +56,8 @@ public class Userinterface {
     }
     public void createSuperhero() {
         System.out.println("-----------------------------------------------------");
-        System.out.print("Indtast navnet på din superhelt (fx Spiderman): "); //TODO række følgen af superhelte data udprint skal laves om.
-        String superHeroName = scanner.nextLine(); //TODO lave while hvis bruger indtaster forkert...
+        System.out.print("Indtast navnet på din superhelt (fx Spiderman): ");
+        String superHeroName = scanner.nextLine();
 
         while (superHeroName.isEmpty() || superHeroName == "") {
             System.out.print("Indtast venligst et navn:");
@@ -76,7 +75,7 @@ public class Userinterface {
         System.out.print("Er din superhelt et menneske (j/n): ");
 
         boolean isHuman = false;
-        while (userValgFalse == true) {
+        while (!userValgFalse) {
             String userAnswerHuman = scanner.next().toLowerCase();
             if (userAnswerHuman.equals("j")) {
                 isHuman = true;
@@ -113,7 +112,7 @@ public class Userinterface {
                 System.out.println("Indtast venligst et årstal der indeholder tal: ");
             }
 
-        } while (userValgFalse == false );
+        } while (!userValgFalse );
 
         System.out.println("-----------------------------------------------------");
         System.out.print("Indtast superheltens styrke (med '.' f.eks. 1.5): ");
@@ -129,7 +128,7 @@ public class Userinterface {
                 System.out.println("Indtast venligst et kommatal der indeholder komma '.' f.eks. 1.5");
                 userValgFalse = false;
             }
-        } while (userValgFalse == false);
+        } while (!userValgFalse);
 
         database.createSuperHero(superHeroName, reelName, isHuman, superPower, creationYear, styrke);
     }
@@ -149,18 +148,25 @@ public class Userinterface {
     public void searchSuperhero() {
         System.out.println("-----------------------------------------------------");
         System.out.println("Indtast den superhelt du vil søge efter: ");
-        String searchTerm = scanner.nextLine();
 
-        for (Superhero superhero : database.findSuperhero(searchTerm) ) {
-            System.out.println("------------------\n"
-                + "Superheltenavn: " + superhero.getSuperHeroName() + "\n"
-                + "Superkraft: " + superhero.getSuperPower() + "\n"
-                + "Virkelige navn: " + superhero.getReelName() + "\n"
-                + "Oprindelsesår: " + superhero.getCreationYear() + "\n"
-                + "Er menneske: " + superhero.getHuman() + "\n"
-                + "Styrke: " + superhero.getPowerLevel());
+            String searchTerm = scanner.nextLine();
 
-        }
+            for (Superhero superhero : database.findSuperhero(searchTerm)) {
+                System.out.println("------------------\n"
+                        + "Superheltenavn: " + superhero.getSuperHeroName() + "\n"
+                        + "Superkraft: " + superhero.getSuperPower() + "\n"
+                        + "Virkelige navn: " + superhero.getReelName() + "\n"
+                        + "Oprindelsesår: " + superhero.getCreationYear() + "\n"
+                        + "Er menneske: " + superhero.getHuman() + "\n"
+                        + "Styrke: " + superhero.getPowerLevel());
+
+                if (database.findSuperhero(searchTerm) == null){
+                    System.out.println("Ingen resultat");
+                }
+
+            }
+
+
     }
     public void editSuperhero() {
         System.out.println("-----------------------------------------------------");
@@ -205,7 +211,7 @@ public class Userinterface {
             } catch (NumberFormatException var11) {
                 System.out.println("Skriv venligst din rettelse med tekst bogstaver eller ENTER hvis du ikke vil rette!");
             }
-        } while (userValgFalse == false);
+        } while (!userValgFalse);
 
         do {
             System.out.println("Superhero rigtige navn: " + editSuperhero.getReelName());
@@ -221,7 +227,7 @@ public class Userinterface {
             } catch (NumberFormatException var10) {
                 System.out.println("Skriv venligst din rettelse med tekst bogstaver eller ENTER hvis du ikke vil rette!");
             }
-        } while (userValgFalse == false);
+        } while (!userValgFalse);
 
         do {
             System.out.println("Superkraft: " + editSuperhero.getSuperPower());
@@ -237,7 +243,7 @@ public class Userinterface {
             } catch (NumberFormatException var9) {
                 System.out.println("Skriv venligst din rettelse med tekst bogstaver eller ENTER hvis du ikke vil rette!");
             }
-        } while (userValgFalse == false);
+        } while (!userValgFalse);
 
         do {
             System.out.println("Oprindelsesår: " + editSuperhero.getCreationYear());
@@ -253,7 +259,7 @@ public class Userinterface {
             } catch (NumberFormatException var8) {
                 System.out.println("Skriv venligst din rettelse med tal eller ENTER hvis du ikke vil rette!");
             }
-        } while (userValgFalse == false);
+        } while (!userValgFalse);
 
         do {
             System.out.println("Er menneske: " + editSuperhero.getHuman());
@@ -269,7 +275,7 @@ public class Userinterface {
             } catch (NumberFormatException var7) {
                 System.out.println("Skriv venligst din rettelse med (j/n) eller ENTER hvis du ikke vil rette!");
             }
-        } while (userValgFalse == false);
+        } while (!userValgFalse);
 
         do {
             System.out.println("Styrke: " + editSuperhero.getPowerLevel());
@@ -285,7 +291,7 @@ public class Userinterface {
             } catch (NumberFormatException var6) {
                 System.out.println("Skriv venligst din rettelse med kommatal (f.eks. 1,5) eller ENTER hvis du ikke vil rette!");
             }
-        } while (userValgFalse == false);
+        } while (!userValgFalse);
 
     }
 
